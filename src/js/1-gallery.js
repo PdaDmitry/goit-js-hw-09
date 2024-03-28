@@ -1,4 +1,8 @@
 'use strict';
+
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -86,15 +90,11 @@ function elLiGallery(images) {
   return item;
 }
 
-const htmllist = elLiGallery(images);
-gallery.innerHTML = htmllist;
-
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+const galleryHtml = elLiGallery(images);
+gallery.innerHTML = galleryHtml;
 
 const show = new SimpleLightbox('.gallery a', {
   overlayOpacity: 1,
-  enableKeyboard: true,
   captionsData: 'alt',
   captionDelay: 250,
 });
